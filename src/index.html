@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>MusicApp</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -18,19 +18,58 @@
     </head>
     <body>
         <main class="bg-slate-950 h-screen">
-            <header class="p-3 bg-gradient-to-b from-purple-500/90 to-purple-400/30 h-2/6 flex gap-8">
-                <i class="fa-solid fa-circle-chevron-left text-white text-4xl"></i>
-                <div class="flex gap-16 items-end py-2">
-                    <img class="rounded-3xl h-full" src="./assets/header.png" alt="Playlist image" />
-                    <div class="flex flex-col gap-3 pb-10">
-                        <h1 class="text-white font-bold text-5xl">a girl and a cat</h1>
-                        <span class="text-white text-lg font-light">661,250 monthly listeners</span>
+            <header
+                class="header relative p-4 md:py-8 md:px-12 bg-gradient-to-b from-purple-500/90 to-purple-400/30 md:h-max h-2/6 flex flex-col md:flex-row md:gap-12 justify-between md:justify-normal">
+                <div
+                    class="icon md:w-[50px] md:h-[50px] w-[40px] h-[40px] md:bg-white bg-purple-600 md:text-purple-600 text-white z-10 cursor-pointer flex items-center justify-center rounded-full">
+                    <i class="fa-solid fa-chevron-left md:text-2xl"></i>
+                </div>
+                <!-- Artist info -->
+                <div class="flex gap-16 py-2 md:items-center items-end justify-center md:justify-normal">
+                    <img
+                        class="md:rounded-3xl w-full md:w-[375px] md:h-[324px] h-full top-0 right-0 absolute md:static object-cover"
+                        src="./assets/header.png"
+                        alt="Artist cover" />
+                    <div class="header__text flex flex-col gap-3 z-10">
+                        <h1 class="font-bold text-5xl">a girl and a cat</h1>
+                        <span class="text-2xl font-light hidden md:block">661,250 monthly listeners</span>
                     </div>
                 </div>
             </header>
-            <div class="bg-gradient-to-b from-purple-400/25 to-purple-500/5 h-4/6">
-                <section></section>
-                <section></section>
+            <div
+                class="md:bg-gradient-to-b md:from-purple-400/25 md:to-purple-500/5 bg-slate-950 h-full md:px-20 md:pr-32 px-5 py-5 flex flex-col gap-3">
+                <section class="actions flex justify-between md:flex-row flex-col-reverse gap-3">
+                    <h2 class="font-bold text-lg md:text-3xl">Popular</h2>
+                    <div class="actions__buttons flex gap-9 items-center">
+                        <div
+                            class="icon w-[60px] h-[60px] bg-purple-600 text-center rounded-full cursor-pointer flex items-center justify-center md:order-none order-last">
+                            <i class="fa-solid fa-play text-3xl"></i>
+                        </div>
+                        <div class="button grow">
+                            <button class="border border-white py-2 px-6 rounded-lg order-first md:-order-none">Follow</button>
+                        </div>
+                        <i class="fa-solid fa-shuffle text-2xl md:text-5xl cursor-pointer"></i>
+                    </div>
+                </section>
+                <section class="tracks flex flex-col gap-6">
+                    <!-- Track -->
+                    <div class="tracks__item flex justify-between items-center">
+                        <div class="track__info flex gap-6 items-center">
+                            <img
+                                class="md:h-[100px] h-[60px] w-[60px] md:w-[100px] object-cover"
+                                src="./assets/header.png"
+                                alt="" />
+                            <div class="flex flex-col md:gap-3 gap-1">
+                                <h3 class="font-bold text-2xl">lofi rain</h3>
+                                <h4 class="font-xl">a girl and a cat</h4>
+                            </div>
+                        </div>
+                        <div class="track__btns flex md:gap-20 gap-5">
+                            <i class="fa-regular fa-heart md:text-3xl text-lg cursor-pointer"></i>
+                            <i class="fa-solid fa-ellipsis-vertical md:text-3xl text-sm cursor-pointer"></i>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
     </body>
