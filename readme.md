@@ -2,7 +2,11 @@
 
 ## UI challenge from FrontEnd Fridays.
 
+<img src="https://github.com/FeniaPfa/WWCodeFF-MusicApp/blob/main/assets/frontend-friday.jpg?raw=true" width=400 height=400>
+
 ## 🚀 Deploy
+
+https://feniapfa.github.io/WWCodeFF-MusicApp/
 
 ## 🛠 Tecnologias
 
