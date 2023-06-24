@@ -3,7 +3,7 @@ const favButtons = document.querySelectorAll('.fav-btn');
 const followButton = document.getElementById('follow-btn');
 
 const toggleColor = (e) => {
-    e.target.classList.toggle('text-purple-600');
+    e.target.classList.toggle('text-primary');
 };
 
 const changeText = () => {
