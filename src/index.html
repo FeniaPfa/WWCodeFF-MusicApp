@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>MusicApp</title>
+        <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -15,9 +16,10 @@
             integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
             crossorigin="anonymous"
             referrerpolicy="no-referrer" />
+        <script src="main.js" defer></script>
     </head>
     <body>
-        <main class="bg-slate-950 h-screen">
+        <main class="bg-slate-950 md:h-full h-screen">
             <header
                 class="header relative p-4 md:py-8 md:px-12 bg-gradient-to-b from-purple-500/90 to-purple-400/30 md:h-max h-2/6 flex flex-col md:flex-row md:gap-12 justify-between md:justify-normal">
                 <div
@@ -37,7 +39,7 @@
                 </div>
             </header>
             <div
-                class="md:bg-gradient-to-b md:from-purple-400/25 md:to-purple-500/5 bg-slate-950 h-full md:px-20 md:pr-32 px-5 py-5 flex flex-col gap-3">
+                class="md:bg-gradient-to-b md:from-purple-400/25 md:to-purple-500/5 bg-slate-950 md:px-20 md:pr-32 px-5 py-5 flex flex-col gap-3">
                 <section class="actions flex justify-between md:flex-row flex-col-reverse gap-3">
                     <h2 class="font-bold text-lg md:text-3xl">Popular</h2>
                     <div class="actions__buttons flex gap-9 items-center">
@@ -46,9 +48,13 @@
                             <i class="fa-solid fa-play text-3xl"></i>
                         </div>
                         <div class="button grow">
-                            <button class="border border-white py-2 px-6 rounded-lg order-first md:-order-none">Follow</button>
+                            <button
+                                id="follow-btn"
+                                class="border border-white font-bold py-3 md:px-7 px-5 md:text-xl text-[1rem] rounded-xl order-first md:-order-none">
+                                Follow
+                            </button>
                         </div>
-                        <i class="fa-solid fa-shuffle text-2xl md:text-5xl cursor-pointer"></i>
+                        <i id="shuffle-btn" class="fa-solid fa-shuffle text-2xl md:text-5xl cursor-pointer"></i>
                     </div>
                 </section>
                 <section class="tracks flex flex-col gap-6">
@@ -57,15 +63,66 @@
                         <div class="track__info flex gap-6 items-center">
                             <img
                                 class="md:h-[100px] h-[60px] w-[60px] md:w-[100px] object-cover"
-                                src="./assets/header.png"
+                                src="./assets/track1.webp"
                                 alt="" />
                             <div class="flex flex-col md:gap-3 gap-1">
-                                <h3 class="font-bold text-2xl">lofi rain</h3>
-                                <h4 class="font-xl">a girl and a cat</h4>
+                                <h3 class="font-bold text-lg md:text-2xl">Who the Hell Is Edgar?</h3>
+                                <h4 class="md:font-xl text-sm">TEYA, SALENA</h4>
                             </div>
                         </div>
                         <div class="track__btns flex md:gap-20 gap-5">
-                            <i class="fa-regular fa-heart md:text-3xl text-lg cursor-pointer"></i>
+                            <i class="fav-btn fa-regular fa-heart md:text-3xl text-lg cursor-pointer"></i>
+                            <i class="fa-solid fa-ellipsis-vertical md:text-3xl text-sm cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <!-- Track -->
+                    <div class="tracks__item flex justify-between items-center">
+                        <div class="track__info flex gap-6 items-center">
+                            <img
+                                class="md:h-[100px] h-[60px] w-[60px] md:w-[100px] object-cover"
+                                src="./assets/track2.webp"
+                                alt="" />
+                            <div class="flex flex-col md:gap-3 gap-1">
+                                <h3 class="font-bold text-lg md:text-2xl">Évidemment</h3>
+                                <h4 class="font-xl text-sm">La Zarra</h4>
+                            </div>
+                        </div>
+                        <div class="track__btns flex md:gap-20 gap-5">
+                            <i class="fav-btn fa-regular fa-heart md:text-3xl text-lg cursor-pointer"></i>
+                            <i class="fa-solid fa-ellipsis-vertical md:text-3xl text-sm cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <!-- Track -->
+                    <div class="tracks__item flex justify-between items-center">
+                        <div class="track__info flex gap-6 items-center">
+                            <img
+                                class="md:h-[100px] h-[60px] w-[60px] md:w-[100px] object-cover"
+                                src="./assets/track3.webp"
+                                alt="" />
+                            <div class="flex flex-col md:gap-3 gap-1">
+                                <h3 class="font-bold text-lg md:text-2xl">Веснянка</h3>
+                                <h4 class="font-xl text-sm">Go_A</h4>
+                            </div>
+                        </div>
+                        <div class="track__btns flex md:gap-20 gap-5">
+                            <i class="fav-btn fa-regular fa-heart md:text-3xl text-lg cursor-pointer"></i>
+                            <i class="fa-solid fa-ellipsis-vertical md:text-3xl text-sm cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <!-- Track -->
+                    <div class="tracks__item flex justify-between items-center">
+                        <div class="track__info flex gap-6 items-center">
+                            <img
+                                class="md:h-[100px] h-[60px] w-[60px] md:w-[100px] object-cover"
+                                src="./assets/track4.webp"
+                                alt="" />
+                            <div class="flex flex-col md:gap-3 gap-1">
+                                <h3 class="font-bold text-lg md:text-2xl">Tattoo</h3>
+                                <h4 class="font-xl text-sm">Loreen</h4>
+                            </div>
+                        </div>
+                        <div class="track__btns flex md:gap-20 gap-5">
+                            <i class="fav-btn fa-regular fa-heart md:text-3xl text-lg cursor-pointer"></i>
                             <i class="fa-solid fa-ellipsis-vertical md:text-3xl text-sm cursor-pointer"></i>
                         </div>
                     </div>
