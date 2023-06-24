@@ -7,7 +7,7 @@ const toggleColor = (e) => {
 };
 
 const changeText = () => {
-    followButton.textContent = followButton.textContent === 'Follow' ? 'Following' : 'Follow';
+    followButton.innerText = followButton.innerText === 'Follow' ? 'Following' : 'Follow';
 };
 
 const changeIcon = (e) => {
